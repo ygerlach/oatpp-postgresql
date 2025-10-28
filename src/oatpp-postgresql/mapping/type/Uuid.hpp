@@ -59,7 +59,7 @@ public:
    * Get raw data of ObjectId.
    * @return
    */
-  const p_char8 getData() const;
+  const v_char8* getData() const;
 
   /**
    * Get size of ObjectId data.

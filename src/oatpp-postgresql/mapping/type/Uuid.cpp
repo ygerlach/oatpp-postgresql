@@ -41,8 +41,8 @@ UuidObject::UuidObject(const oatpp::String& text) {
   std::memcpy(m_data, stream.getData(), DATA_SIZE);
 }
 
-const p_char8 UuidObject::getData() const {
-  return (const p_char8) m_data;
+const v_char8* UuidObject::getData() const {
+  return static_cast<const v_char8*>(m_data);
 }
 
 v_buff_size UuidObject::getSize() const {

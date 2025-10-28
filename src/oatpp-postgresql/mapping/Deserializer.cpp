@@ -347,7 +347,8 @@ oatpp::Void Deserializer::deserializeSubArray(const Type* type,
   auto itemType = dispatcher->getItemType();
   auto collection = dispatcher->createObject();
 
-  if(dimension < meta.dimensions.size() - 1) {
+  const v_int32 metaDimensions = meta.dimensions.size() - 1;
+  if(dimension < metaDimensions) {
 
     auto size = meta.dimensions[dimension];
 
@@ -358,7 +359,7 @@ oatpp::Void Deserializer::deserializeSubArray(const Type* type,
 
     return collection;
 
-  } else if(dimension == meta.dimensions.size() - 1) {
+  } else if(dimension == metaDimensions) {
 
     auto size = meta.dimensions[dimension];
 

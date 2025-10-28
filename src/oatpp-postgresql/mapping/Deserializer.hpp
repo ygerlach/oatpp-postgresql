@@ -111,7 +111,7 @@ private:
   template<typename T>
   static const oatpp::Type* generateMultidimensionalArrayType(const InData& data) {
 
-    if(data.size < sizeof(v_int32)) {
+    if(data.size < static_cast<v_buff_size>(sizeof(v_int32))) {
       return nullptr;
     }
 

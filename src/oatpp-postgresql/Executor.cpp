@@ -45,7 +45,7 @@ namespace {
 
   class VersionRow : public oatpp::DTO {
 
-    DTO_INIT(VersionRow, DTO);
+    DTO_INIT(VersionRow, DTO)
 
     DTO_FIELD(Int64, version);
 
@@ -90,7 +90,7 @@ Executor::QueryParams::QueryParams(const StringTemplate& queryTemplate,
   paramLengths.resize(count);
   paramFormats.resize(count);
 
-  for(v_uint32 i = 0; i < count; i ++) {
+  for(v_int32 i = 0; i < count; i ++) {
 
     const auto& var = queryTemplate.getTemplateVariables()[i];
     auto it = params.find(var.name);
