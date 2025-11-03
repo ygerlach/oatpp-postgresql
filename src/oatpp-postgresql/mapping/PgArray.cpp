@@ -89,7 +89,7 @@ void ArrayUtils::readArrayHeader(data::stream::InputStream* stream,
 
   dimensions.push_back(arrayHeader.size);
 
-  for(v_uint32 i = 1; i < arrayHeader.ndim; i++) {
+  for(v_int32 i = 1; i < arrayHeader.ndim; i++) {
     stream->readExactSizeDataSimple(&v, sizeof(v_int32));
     dimensions.push_back(ntohl(v));
 
