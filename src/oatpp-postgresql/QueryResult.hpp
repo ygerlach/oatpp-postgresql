@@ -71,6 +71,8 @@ public:
 
   bool hasMoreToFetch() const override;
 
+  v_uint64 getRowsAffected() const override;
+
   oatpp::Void fetch(const oatpp::Type* const resultType, v_int64 count) override;
 
 };

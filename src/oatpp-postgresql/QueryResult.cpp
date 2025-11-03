@@ -97,6 +97,10 @@ v_int64 QueryResult::getKnownCount() const {
   return 0;
 }
 
+v_uint64 QueryResult::getRowsAffected() const {
+  return m_resultData.affectedRowCount;
+}
+
 bool QueryResult::hasMoreToFetch() const {
   return getKnownCount() > 0;
 }

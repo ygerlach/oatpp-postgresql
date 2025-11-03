@@ -24,6 +24,7 @@
 
 #include "ResultMapper.hpp"
 #include "oatpp/base/Log.hpp"
+#include "oatpp/utils/parser/Caret.hpp"
 
 namespace oatpp { namespace postgresql { namespace mapping {
 
@@ -43,6 +44,9 @@ ResultMapper::ResultData::ResultData(PGresult* pDbResult, const std::shared_ptr<
       colIndices.insert({colName, i});
     }
   }
+
+  char* rowsAffectedStr = PQcmdTuples(dbResult); // will be freed when the result is freed
+  affectedRowCount = oatpp::utils::parser::Caret(rowsAffectedStr).parseUnsignedInt();
 
 }
 
