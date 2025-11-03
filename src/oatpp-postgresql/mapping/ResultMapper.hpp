@@ -85,6 +85,11 @@ public:
      */
     v_int64 rowCount;
 
+    /**
+     * rows affected by the operation might be 0
+     */
+    v_uint64 affectedRowCount;
+
   };
 
 private:
